@@ -6,18 +6,18 @@ formEl.addEventListener("submit", formSubmit);
 function formSubmit(event) {
   event.preventDefault();
 
-  const emailEl = event.currentTarget.elements.email.value;
-  const passwordEl = event.currentTarget.elements.password.value;
-  const account = {
-    email: emailEl,
-    password: passwordEl,
-  };
+  const email = event.currentTarget.elements.email.value;
+  const password = event.currentTarget.elements.password.value;
+    const formData = {
+        email,
+        password
+  }
 
-  if (emailEl === "" || passwordEl === "") {
+  if (email === "" || password === "") {
     console.log(alert("All fields must be filled"));
     return;
-  } else if (emailEl !== "" || passwordEl !== "") {
-    console.log(`Email: ${account.email} \nPassword: ${account.password}`);
+  } else if (email !== "" || password !== "") {
+    console.log(formData);
     formEl.reset();
   }
 }
